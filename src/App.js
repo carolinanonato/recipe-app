@@ -1,11 +1,12 @@
 import './index.css';
-import Cards from './components/Cards'
+
+import Meals from './components/Meals';
 
 function App() {
   return (
     <div className="App">
 
-      <Cards />
+      <Meals />
     </div>
   );
 }
