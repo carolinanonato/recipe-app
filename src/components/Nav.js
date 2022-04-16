@@ -8,7 +8,7 @@ const Nav = () => {
             <div >
                 <h1 style={{
                     marginLeft: '20px', fontSize: '30px'
-                }}>Recipe <span style={{ color: 'peachPuff' }}>App</span></h1>
+                }}>Recipe <span style={{ color: 'turquoise' }}>App</span></h1>
             </div>
 
             <div >
