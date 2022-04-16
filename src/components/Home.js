@@ -1,9 +1,7 @@
 import React from 'react'
 
-const Home = () => {
+export default function Home() {
     return (
-        <div>Home</div>
+        <div style={{ height: "auto", minHeight: "100vh" }}>Home</div>
     )
 }
-
-export default Home
