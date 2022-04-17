@@ -16,6 +16,7 @@ const Nav = () => {
                     <Link to="/" style={{ textDecoration: 'none' }}><li style={{ color: 'white', textDecoration: 'none', listStyle: 'none', margin: '0px 10px', fontSize: "22px" }}>Home</li></Link>
 
                     <Link to="/categories" style={{ textDecoration: 'none' }}><li style={{ color: 'white', textDecoration: 'none', listStyle: 'none', margin: '0px 10px', fontSize: "22px", marginRight: "30px" }}>Categories</li></Link>
+                    <Link to="/random" style={{ textDecoration: 'none' }}><li style={{ color: 'white', textDecoration: 'none', listStyle: 'none', margin: '0px 10px', fontSize: "22px", marginRight: "30px" }}>Random</li></Link>
                 </ul>
             </div>
         </div >

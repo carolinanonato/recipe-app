@@ -8,6 +8,7 @@ export const Context = ({ children }) => {
 
     const [recipe, setRecipe] = useState([])
     const [categories, setCategories] = useState([])
+    const [random, setRandom] = useState([])
 
     const fetchRecipes = useCallback((searchTerm) => {
         axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
@@ -17,6 +18,14 @@ export const Context = ({ children }) => {
             })
     }, [])
 
-    return <myContext.Provider value={{ fetchRecipes, recipe }}>{children}</myContext.Provider>
+    const fetchCategories = useCallback(() => {
+        axios.get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+            .then(res => {
+                console.log(res.data.categories)
+                setCategories(res.data.categories)
+            })
+    }, [])
+
+    return <myContext.Provider value={{ fetchRecipes, recipe, fetchCategories, categories }}>{children}</myContext.Provider>
 
 }
