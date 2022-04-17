@@ -5,7 +5,7 @@ export default function Home() {
 
     const [searchTerm, setSearchTerm] = useState("")
 
-    const { fetchRecipes } = useContext(myContext)
+    const { fetchRecipes, recipe } = useContext(myContext)
 
     const fetchRecipeHandler = useCallback(() => {
         fetchRecipes(searchTerm)
@@ -20,7 +20,12 @@ export default function Home() {
             </div>
 
             <div>
-
+                {recipe ? recipe.map(recipe => (
+                    <div key={recipe.idrecipe}>
+                        <img src={recipe.strMealThumb} alt="#" />
+                        <h4>{recipe.strMeal}</h4>
+                    </div>
+                )) : <h2>No recipe found!</h2>}
             </div>
 
 
