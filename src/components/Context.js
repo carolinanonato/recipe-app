@@ -26,6 +26,14 @@ export const Context = ({ children }) => {
             })
     }, [])
 
-    return <myContext.Provider value={{ fetchRecipes, recipe, fetchCategories, categories }}>{children}</myContext.Provider>
+    const fetchRandom = useCallback(() => {
+        axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
+            .then(res => {
+                console.log(res.data.meals)
+                setRandom(res.data.meals)
+            })
+    }, [])
+
+    return <myContext.Provider value={{ fetchRecipes, recipe, fetchCategories, categories, fetchRandom, random }}>{children}</myContext.Provider>
 
 }
